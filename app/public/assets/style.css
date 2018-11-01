@@ -1,0 +1,15 @@
+body {
+    color: rgb(35, 77, 116);
+    font-family: 'Righteous', cursive;
+}
+.fas {
+    padding-left: 60px;
+}
+
+.btn {
+    margin-top: 20px;
+    background-color: rgb(35, 77, 116);
+}
+.custom-select {
+    color: rgb(53, 137, 143);
+}
