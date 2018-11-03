@@ -1,4 +1,4 @@
-var friendsArray = [
+var friends = [
 {
     "name": "Richard Ramirez",
     "photo": "https://i.pinimg.com/originals/38/59/e4/3859e4144ae2fd112a8c66b8c77a1801.jpg",
@@ -18,7 +18,7 @@ var friendsArray = [
 {
 
     "name": "Ted Bundy",
-    "photo": "http://i66.tinypic.com/2rogs3t.jpg",
+    "photo": "https://www.google.com/url?sa=i&source=images&cd=&cad=rja&uact=8&ved=2ahUKEwjS7feA77feAhVDXawKHbdeC5MQjRx6BAgBEAU&url=https%3A%2F%2Fwww.orlandosentinel.com%2Fentertainment%2Ftv%2Ftv-guy%2Fos-et-s2-ted-bundy-how-it-really-happened-20180926-story.html&psig=AOvVaw2gU6JV78puyPKKEvq5zlmU&ust=1541322235817336",
     "scores": [
         5,
         5,
@@ -69,7 +69,7 @@ var friendsArray = [
 {
 
     "name": "David Berkowitz",
-    "photo": "http://i65.tinypic.com/sq6t8m.jpg",
+    "photo": "https://i.pinimg.com/564x/e0/af/5a/e0af5a77e5ec94dd35c15177f55372db.jpg",
     "scores": [
         5,
         4,
@@ -86,13 +86,13 @@ var friendsArray = [
 {
 
     "name": "Charles Manson",
-    "photo": "http://i66.tinypic.com/9zrqxj.jpg",
+    "photo": "https://www.biography.com/.image/t_share/MTE5NTU2MzE2MzA4MTQ1Njc1/charles-manson-9397912-2-402.jpg",
     "scores": [
-        5,
-        5,
+        2,
+        2,
         5,
         4,
-        4,
+        3,
         4,
         2,
         4,
@@ -117,56 +117,26 @@ var friendsArray = [
         2
     ]
 },
-{
-    "name": "Richard Ramirez",
-    "photo": "http",
-    "scores": [
-        5,
-        4,
-        4,
-        1,
-        1,
-        2,
-        3,
-        4,
-        5,
-        2
-    ]
-},
-{
-    "name": "Richard Ramirez",
-    "photo": "http",
-    "scores": [
-        5,
-        4,
-        4,
-        1,
-        1,
-        2,
-        3,
-        4,
-        5,
-        2
-    ]
-},
-{
-    "name": "Richard Ramirez",
-    "photo": "http",
-    "scores": [
-        5,
-        4,
-        4,
-        1,
-        1,
-        2,
-        3,
-        4,
-        5,
-        2
-    ]
-},
-{
 
-}];
-console.log(friendsArray);
-module.exports = friendsArray;
+   
+{
+    "name": "John Wayne Gacy",
+    "photo": "https://i.pinimg.com/564x/ee/d8/54/eed854710dd24d95d6490d9779642e7c.jpg",
+    "scores": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        4,
+        3,
+        2,
+        5,
+        2
+    ]
+}
+
+
+];
+console.log(friends);
+module.exports = friends;

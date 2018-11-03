@@ -13,3 +13,13 @@ body {
 .custom-select {
     color: rgb(53, 137, 143);
 }
+
+#resultsModal {
+    text-align: center;
+}
+
+#matchImage {
+    max-width: 100%;
+    height: auto;
+}
+

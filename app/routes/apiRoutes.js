@@ -14,12 +14,13 @@ module.exports = function (app) {
   
 
   app.post("/api/friends", function (req, res) {
+    console.log(req.body.scores);
 
     var newFriend = req.body;
 
     //loop through scores
 
-    newFriend.scores.forEach(function (score) {
+    newFriend.scores.forEach(function(score) {
       if (score.scores == "1 (Strongly Disagree)") {
         score.scores = 1;
       }
@@ -27,11 +28,11 @@ module.exports = function (app) {
         score.scores = 5;
       }
       else {
-        score.scores.parseInt(score.scores);
+        score.scores = parseInt(score.scores);
       }
     });
   
- 
+    
 
     //best match friend
     var newFriend = req.body;
@@ -70,14 +71,14 @@ module.exports = function (app) {
 
 
 
-app.post("/api/clear", function() {
-  // Empty out the arrays of data
-  friendData = [];
+// app.post("/api/clear", function() {
+//   // Empty out the arrays of data
+//   friendData = [];
   
 
-  console.log(friendData);
+  console.log(friendsData);
+// });
 })
-})
-}
+};
 
 
