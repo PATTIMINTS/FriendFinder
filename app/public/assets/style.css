@@ -1,25 +1,26 @@
 body {
-    color: rgb(35, 77, 116);
-    font-family: 'Righteous', cursive;
+  color: rgb(35, 77, 116);
+  font-family: "Righteous", cursive;
+  background-color: blue;
 }
+
 .fas {
-    padding-left: 60px;
+  padding-left: 60px;
 }
 
 .btn {
-    margin-top: 20px;
-    background-color: rgb(35, 77, 116);
+  margin-top: 20px;
+  background-color: rgb(35, 77, 116);
 }
 .custom-select {
-    color: rgb(53, 137, 143);
+  color: rgb(53, 137, 143);
 }
 
 #resultsModal {
-    text-align: center;
+  text-align: center;
 }
 
 #matchImage {
-    max-width: 100%;
-    height: auto;
+  max-width: 100%;
+  height: auto;
 }
-
