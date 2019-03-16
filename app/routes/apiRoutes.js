@@ -1,84 +1,44 @@
-// var express = require("express");
-// var app = express();
-// var apiRoutes = require("./app/routes/apiRoutes");
 var friendsData = require("../data/friends");
 
-
-module.exports = function (app) {
-
-  app.get("/api/friends", function (req, res) {
+module.exports = function(app) {
+  app.get("/api/friends", function(req, res) {
     res.json(friendsData);
   });
 
-  //api post requests
-  
+  app.post("/api/friends", function(req, res) {
+    var bestMatch = {
+      name: "",
+      photo: "",
+      friendDifference: 1000
+    };
 
-  app.post("/api/friends", function (req, res) {
-    console.log(req.body.scores);
+    console.log(req.body);
 
-    var newFriend = req.body;
+    var userData = req.body;
+    var userScores = userData.scores;
 
-    //loop through scores
+    console.log(userScores);
 
-    newFriend.scores.forEach(function(score) {
-      if (score.scores == "1 (Strongly Disagree)") {
-        score.scores = 1;
-      }
-      else if (score.scores == "5 (Strongly Agree)") {
-        score.scores = 5;
-      }
-      else {
-        score.scores = parseInt(score.scores);
-      }
-    });
-  
-    
+    var totalDifference = 0;
 
-    //best match friend
-    var newFriend = req.body;
+    for (var i = 0; i < friendsData.length; i++) {
+      console.log(friendsData[i]);
+      totalDifference = 0;
 
-    var bestMatch = {};
-    var matchesFriend = 0;
+      for (var j = 0; j < friendsData[i].scores[j]; j++) {
+        totalDifference += Math.abs(
+          parseInt(userScores[j]) - parseInt(friendsData[i].scores[j])
+        );
 
-    var highMatchedScore = 40;
-
-    // looping through all friends
-
-    for (var friend = 0; friend < friendsData.length; friend++) {
-      var totDiffScore = 0;
-
-      // looping through individual friends
-
-      for (var score = 0; score < friendsData[friend].scores.length; score++) {
-        var diff = Math.abs(friendsData[friend].scores[score] = newFriend.scores[score]);
-        totDiffScore += diff;
-      }
-      console.log(totDiffScore, friendsData[friend].name);
-
-      if (totDiffScore < highMatchedScore) {
-        matchesFriend = friend;
-        highMatchedScore = totDiffScore;
+        if (totalDifference <= bestMatch.friendDifference) {
+          bestMatch.name = friendsData[i].name;
+          bestMatch.photo = friendsData[i].photo;
+          bestMatch.friendDifference = totalDifference;
+        }
       }
     }
 
-    bestMatch = friendsData[matchesFriend];
-    friendsData.push(newFriend);
-
+    friendsData.push(userData);
     res.json(bestMatch);
-  
-
-
-
-
-
-// app.post("/api/clear", function() {
-//   // Empty out the arrays of data
-//   friendData = [];
-  
-
-  console.log(friendsData);
-// });
-})
+  });
 };
-
-
